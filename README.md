@@ -18,7 +18,7 @@
 
 ```html
 <link rel="stylesheet" href="/path/to/select2.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ttskch/select2-bootstrap4-theme@x.x.x/dist/select2-bootstrap4.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ttskch/select2-bootstrap4-theme@x.x.x/dist/select2-bootstrap5.min.css">
 ```
 
 ### Manually
@@ -36,14 +36,14 @@ $ composer require ttskch/select2-bootstrap4-theme
 
 ```html
 <link rel="stylesheet" href="/path/to/select2.css">
-<link rel="stylesheet" href="/path/to/select2-bootstrap4.min.css">
+<link rel="stylesheet" href="/path/to/select2-bootstrap5.min.css">
 ```
 
 ## Usage
 
 ```js
 $('select').select2({
-    theme: 'bootstrap4',
+    theme: 'bootstrap5',
 });
 ```
 
@@ -55,7 +55,7 @@ $('select').select2({
 
 You can use [docs](docs) dir for your development.
 
-1. Run `npm run prepare` (this creates symlink to `dist/select2-bootstrap4.css` onto `docs`)
+1. Run `npm run prepare` (this creates symlink to `dist/select2-bootstrap5.css` onto `docs`)
 1. Serve `docs` from your local web server, examples:
     - Using PHP: `php -S localhost:8888 -t docs`
     - Using Python 3: `python3 -m http.server -d docs 8888`

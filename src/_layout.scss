@@ -1,52 +1,49 @@
-// basic
-.select2-container {
+.select2-container--bootstrap5 {
   display: block;
 
   *:focus {
     outline: 0;
   }
-}
 
-// input-group
-.input-group .select2-container--bootstrap4 {
-  flex-grow: 1;
-}
+  // input-group
+  .input-group & {
+    flex-grow: 1;
+  }
 
-// for prepended input
-.input-group-prepend ~ .select2-container--bootstrap4 .select2-selection {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-}
+  // for prepended input
+  .input-group-text ~ & .select2-selection {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
 
-// for appended input
-.input-group > .select2-container--bootstrap4:not(:last-child) .select2-selection {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
+  // for appended input
+  .input-group > &:not(:last-child) .select2-selection {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
 
-.select2-container--bootstrap4 {
   // input box
   .select2-selection {
     width: 100%;
-    min-height: $select2-bootstrap4-height;
-    padding: $select2-bootstrap4-padding-y ($select2-bootstrap4-padding-x + $select2-bootstrap4-indicator-padding) $select2-bootstrap4-padding-y $select2-bootstrap4-padding-x;
-    font-family: $select2-bootstrap4-font-family;
-    @include font-size($select2-bootstrap4-font-size);
-    font-weight: $select2-bootstrap4-font-weight;
-    line-height: $select2-bootstrap4-line-height;
-    color: $select2-bootstrap4-color;
+    min-height: $select2-bootstrap5-height;
+    padding: $select2-bootstrap5-padding-y $select2-bootstrap5-indicator-padding $select2-bootstrap5-padding-y $select2-bootstrap5-padding-x;
+    font-family: $select2-bootstrap5-font-family;
+    @include font-size($select2-bootstrap5-font-size);
+    font-weight: $select2-bootstrap5-font-weight;
+    line-height: $select2-bootstrap5-line-height;
+    color: $select2-bootstrap5-color;
     vertical-align: middle;
-    background-color: $select2-bootstrap4-bg;
-    border: $select2-bootstrap4-border-width solid $select2-bootstrap4-border-color;
-    @include border-radius($select2-bootstrap4-border-radius, 0);
-    @include box-shadow($select2-bootstrap4-box-shadow);
-    @include transition($select2-bootstrap4-transition);
+    background-color: $select2-bootstrap5-bg;
+    border: $select2-bootstrap5-border-width solid $select2-bootstrap5-border-color;
+    @include border-radius($select2-bootstrap5-border-radius, 0);
+    @include box-shadow($select2-bootstrap5-box-shadow);
+    @include transition($select2-bootstrap5-transition);
   }
 
   &.select2-container--focus {
     .select2-selection {
-      border-color: $select2-bootstrap4-focus-border-color;
-      box-shadow: $select2-bootstrap4-focus-box-shadow;
+      border-color: $select2-bootstrap5-focus-border-color;
+      box-shadow: $select2-bootstrap5-focus-box-shadow;
     }
   }
 
@@ -68,82 +65,79 @@
     .select2-selection,
     .select2-search__field {
       cursor: not-allowed;
-      background-color: $select2-bootstrap4-disabled-bg;
-      border-color: $select2-bootstrap4-border-color;
+      background-color: $select2-bootstrap5-disabled-bg;
+      border-color: $select2-bootstrap5-border-color;
       box-shadow: none;
     }
   }
 
   // validated input box
   // stylelint-disable selector-no-qualifying-type
-  @each $state, $data in $select2-bootstrap4-validation-states {
-    select.is-#{$state} ~ & .select2-selection,
-    form.was-validated select:#{$state} ~ & .select2-selection {
-      border-color: map-get($data, color);
-
-      @if $select2-bootstrap4-enable-validation-icons {
-        padding-right: $select2-bootstrap4-feedback-icon-padding-right !important; // stylelint-disable-line declaration-no-important
-        background: $select2-bootstrap4-background, $select2-bootstrap4-bg escape-svg(map-get($data, icon)) $select2-bootstrap4-feedback-icon-position / $select2-bootstrap4-feedback-icon-size no-repeat;
+  @each $state, $data in $select2-bootstrap5-validation-states {
+    select.is-#{$state} ~ &,
+    form.was-validated select:#{$state} ~ & {
+      .select2-selection {
+        border-color: map-get($data, color);
       }
 
-      &:focus {
+      &.select2-container--focus .select2-selection {
         border-color: map-get($data, color);
-        box-shadow: 0 0 0 $select2-bootstrap4-focus-width rgba(map-get($data, color), .25);
+        box-shadow: 0 0 0 $select2-bootstrap5-focus-width rgba(map-get($data, color), .25);
       }
     }
   }
   // stylelint-enable selector-no-qualifying-type
 
   .select2-dropdown {
-    border-color: $select2-bootstrap4-border-color;
+    border-color: $select2-bootstrap5-border-color;
     border-radius: 0; // overload select2.css
 
     &.select2-dropdown--below {
-      @include border-bottom-radius($select2-bootstrap4-border-radius);
+      @include border-bottom-radius($select2-bootstrap5-border-radius);
     }
 
     &.select2-dropdown--above {
-      @include border-top-radius($select2-bootstrap4-border-radius);
+      @include border-top-radius($select2-bootstrap5-border-radius);
     }
   }
 
   .select2-results__option {
-    padding: $select2-bootstrap4-padding-y $select2-bootstrap4-padding-x;
+    padding: $select2-bootstrap5-padding-y $select2-bootstrap5-padding-x;
 
     &--selected {
-      color: color-yiq($select2-bootstrap4-disabled-bg);
-      background-color: $select2-bootstrap4-disabled-bg;
+      color: color-contrast($select2-bootstrap5-disabled-bg);
+      background-color: $select2-bootstrap5-disabled-bg;
     }
 
     &--disabled {
-      color: $select2-bootstrap4-disabled-color;
+      color: $select2-bootstrap5-disabled-color;
     }
 
     // hover
     &--highlighted {
-      color: color-yiq($select2-bootstrap4-highlighted-bg);
-      background-color: $select2-bootstrap4-highlighted-bg;
+      color: color-contrast($select2-bootstrap5-highlighted-bg);
+      background-color: $select2-bootstrap5-highlighted-bg;
     }
 
     &--group {
       padding: 0;
 
       .select2-results__options--nested .select2-results__option {
-        padding-left: $select2-bootstrap4-padding-x;
+        padding-left: $select2-bootstrap5-padding-x;
       }
     }
   }
 
   // vertical overflow
   .select2-results > .select2-results__options {
-    max-height: $select2-bootstrap4-dropdown-height;
+    max-height: $select2-bootstrap5-dropdown-height;
     overflow-y: auto;
   }
 
   .select2-results__group {
     display: list-item;
-    padding: $select2-bootstrap4-padding-y $select2-bootstrap4-padding-x / 2;
-    color: $select2-bootstrap4-disabled-color;
+    padding: $select2-bootstrap5-padding-y $select2-bootstrap5-padding-x / 2;
+    color: $select2-bootstrap5-disabled-color;
   }
 
   // clear all button
@@ -152,11 +146,11 @@
     width: 1em;
     height: 1em;
     padding: 0;
-    margin: subtract($select2-bootstrap4-line-height * 1em, 1em) / 2 0 0;
+    margin: subtract($select2-bootstrap5-line-height * 1em, 1em) / 2 0 0;
     font-weight: 700;
     line-height: (12em / 16);
-    color: $select2-bootstrap4-color;
-    background: darken($select2-bootstrap4-bg, 10%) escape-svg($select2-bootstrap4-selection-clear-icon) center no-repeat !important; // stylelint-disable-line declaration-no-important
+    color: $select2-bootstrap5-color;
+    background: darken($select2-bootstrap5-bg, 10%) escape-svg($select2-bootstrap5-selection-clear-icon) center no-repeat !important; // stylelint-disable-line declaration-no-important
     border-radius: 100%;
 
     // hide default &times; entity
@@ -165,7 +159,7 @@
     }
 
     &:hover {
-      background-color: darken($select2-bootstrap4-bg, 15%) !important; // stylelint-disable-line declaration-no-important
+      background-color: darken($select2-bootstrap5-bg, 15%) !important; // stylelint-disable-line declaration-no-important
     }
   }
 

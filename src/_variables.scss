@@ -1,52 +1,53 @@
 // Inherit from Bootstrap variables
-$select2-bootstrap4-enable-validation-icons: $enable-validation-icons !default;
+$select2-bootstrap5-enable-shadows: $enable-shadows !default;
+$select2-bootstrap5-enable-validation-icons: $enable-validation-icons !default;
 
-$select2-bootstrap4-placeholder-color: $input-placeholder-color !default;
+$select2-bootstrap5-placeholder-color:    $input-placeholder-color !default;
+$select2-bootstrap5-height-inner:         $input-height-inner !default;
+$select2-bootstrap5-height-inner-quarter: $input-height-inner-quarter !default;
 
-$select2-bootstrap4-transition: $custom-forms-transition !default;
+$select2-bootstrap5-transition: $input-transition !default;
 
-$select2-bootstrap4-focus-border-color: $custom-select-focus-border-color !default;
-$select2-bootstrap4-focus-width:        $custom-select-focus-width !default;
-$select2-bootstrap4-focus-box-shadow:   $custom-select-focus-box-shadow;
+$select2-bootstrap5-focus-border-color: $form-select-focus-border-color !default;
+$select2-bootstrap5-focus-width:        $form-select-focus-width !default;
+$select2-bootstrap5-focus-box-shadow:   $form-select-focus-box-shadow;
 
-$select2-bootstrap4-padding-y:         $custom-select-padding-y !default;
-$select2-bootstrap4-padding-x:         $custom-select-padding-x !default;
-$select2-bootstrap4-font-family:       $custom-select-font-family !default;
-$select2-bootstrap4-font-size:         $custom-select-font-size !default;
-$select2-bootstrap4-height:            $custom-select-height !default;
-$select2-bootstrap4-indicator-padding: $custom-select-indicator-padding !default;
-$select2-bootstrap4-font-weight:       $custom-select-font-weight !default;
-$select2-bootstrap4-line-height:       $custom-select-line-height !default;
-$select2-bootstrap4-color:             $custom-select-color !default;
-$select2-bootstrap4-disabled-color:    $custom-select-disabled-color !default;
-$select2-bootstrap4-bg:                $custom-select-bg !default;
-$select2-bootstrap4-disabled-bg:       $custom-select-disabled-bg !default;
-$select2-bootstrap4-bg-size:           $custom-select-bg-size !default;
-$select2-bootstrap4-indicator-color:   $custom-select-indicator-color !default;
-$select2-bootstrap4-indicator:         $custom-select-indicator !default;
-$select2-bootstrap4-background:        $custom-select-background !default;
+$select2-bootstrap5-padding-y:         $form-select-padding-y !default;
+$select2-bootstrap5-padding-x:         $form-select-padding-x !default;
+$select2-bootstrap5-font-family:       $form-select-font-family !default;
+$select2-bootstrap5-font-size:         $form-select-font-size !default;
+$select2-bootstrap5-height:            $input-height !default;
+$select2-bootstrap5-indicator-padding: $form-select-indicator-padding !default;
+$select2-bootstrap5-font-weight:       $form-select-font-weight !default;
+$select2-bootstrap5-line-height:       $form-select-line-height !default;
+$select2-bootstrap5-color:             $form-select-color !default;
+$select2-bootstrap5-disabled-color:    $form-select-disabled-color !default;
+$select2-bootstrap5-bg:                $form-select-bg !default;
+$select2-bootstrap5-disabled-bg:       $form-select-disabled-bg !default;
+$select2-bootstrap5-bg-position:       $form-select-bg-position !default;
+$select2-bootstrap5-bg-size:           $form-select-bg-size !default;
+$select2-bootstrap5-indicator-color:   $form-select-indicator-color !default;
+$select2-bootstrap5-indicator:         $form-select-indicator !default;
 
-// `feedback-icon-padding-right` adds some extra space compared to Boostrap
-// because of the clear button
-$select2-bootstrap4-feedback-icon-padding-right: add(1em, (2 * $select2-bootstrap4-padding-y * .75) + $select2-bootstrap4-padding-x + $select2-bootstrap4-indicator-padding) !default;
-$select2-bootstrap4-feedback-icon-position:      $custom-select-feedback-icon-position !default;
-$select2-bootstrap4-feedback-icon-size:          $custom-select-feedback-icon-size !default;
+$select2-bootstrap5-feedback-icon-padding-end: $form-select-feedback-icon-padding-end !default;
+$select2-bootstrap5-feedback-icon-position:    $form-select-feedback-icon-position !default;
+$select2-bootstrap5-feedback-icon-size:        $form-select-feedback-icon-size !default;
 
-$select2-bootstrap4-border-width:  $custom-select-border-width !default;
-$select2-bootstrap4-border-color:  $custom-select-border-color !default;
-$select2-bootstrap4-border-radius: $custom-select-border-radius !default;
-$select2-bootstrap4-box-shadow:    $custom-select-box-shadow !default;
+$select2-bootstrap5-border-width:  $form-select-border-width !default;
+$select2-bootstrap5-border-color:  $form-select-border-color !default;
+$select2-bootstrap5-border-radius: $form-select-border-radius !default;
+$select2-bootstrap5-box-shadow:    $form-select-box-shadow !default;
 
-$select2-bootstrap4-validation-states: $form-validation-states !default;
+$select2-bootstrap5-validation-states: $form-validation-states !default;
 
 // Font family fallback. Needed because `$custom-select-font-family` defaults
 // to `null`, but Select2 comes with a `font-family: sans-serif` CSS rule that
 // this theme needs to override
-$select2-bootstrap4-font-family: $font-family-base !default;
+$select2-bootstrap5-font-family: $font-family-base !default;
 
 // New variables specific to the theme
-$select2-bootstrap4-dropdown-height:                15em !default;
-$select2-bootstrap4-highlighted-bg:                 $primary !default;
-$select2-bootstrap4-selection-choice-bg:            $secondary !default;
-$select2-bootstrap4-selection-choice-border-radius: $border-radius-sm !default;
-$select2-bootstrap4-selection-clear-icon:           url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 16 16'><path fill='#{$select2-bootstrap4-color}' d='M1 12l4-4-4-4 3-3 4 4 4-4 3 3-4 4 4 4-3 3-4-4-4 4z'/></svg>") !default;
+$select2-bootstrap5-dropdown-height:                15em !default;
+$select2-bootstrap5-highlighted-bg:                 $primary !default;
+$select2-bootstrap5-selection-choice-bg:            $secondary !default;
+$select2-bootstrap5-selection-choice-border-radius: $border-radius-sm !default;
+$select2-bootstrap5-selection-clear-icon:           url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 16 16'><path fill='#{$select2-bootstrap5-color}' d='M1 12l4-4-4-4 3-3 4 4 4-4 3 3-4 4 4 4-3 3-4-4-4 4z'/></svg>") !default;

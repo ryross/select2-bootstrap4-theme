@@ -1,26 +1,55 @@
-.select2-container--bootstrap4 {
+.select2-container--bootstrap5 {
   .select2-selection--single {
-    background: $select2-bootstrap4-bg $select2-bootstrap4-background;
+    background-color: $select2-bootstrap5-bg;
+    background-image: escape-svg($select2-bootstrap5-indicator);
+    background-repeat: no-repeat;
+    background-position: $select2-bootstrap5-bg-position;
+    background-size: $select2-bootstrap5-bg-size;
+
+    // stylelint-disable selector-no-qualifying-type
+    @if $select2-bootstrap5-enable-validation-icons {
+      @each $state, $data in $select2-bootstrap5-validation-states {
+        select.is-#{$state} ~ &,
+        form.was-validated select:#{$state} ~ & {
+          padding-right: $select2-bootstrap5-feedback-icon-padding-end;
+          background-image: escape-svg($select2-bootstrap5-indicator), escape-svg(map-get($data, icon));
+          background-position: $select2-bootstrap5-bg-position, $select2-bootstrap5-feedback-icon-position;
+          background-size: $select2-bootstrap5-bg-size, $select2-bootstrap5-feedback-icon-size;
+        }
+      }
+    }
+    // stylelint-enable selector-no-qualifying-type
 
     .select2-selection__placeholder {
-      color: $select2-bootstrap4-placeholder-color;
+      color: $select2-bootstrap5-placeholder-color;
     }
 
     // selected item
     .select2-selection__rendered {
       padding: 0;
-      color: $select2-bootstrap4-color;
+      color: $select2-bootstrap5-color;
     }
   }
 
   // search box
   .select2-search--dropdown {
     .select2-search__field {
-      padding: $select2-bootstrap4-padding-y $select2-bootstrap4-padding-x;
-      color: $select2-bootstrap4-color;
-      border: $select2-bootstrap4-border-width solid $select2-bootstrap4-border-color;
-      @include border-radius($select2-bootstrap4-border-radius);
-      @include form-control-focus(true);
+      padding: $select2-bootstrap5-padding-y $select2-bootstrap5-padding-x;
+      color: $select2-bootstrap5-color;
+      border: $select2-bootstrap5-border-width solid $select2-bootstrap5-border-color;
+      @include border-radius($select2-bootstrap5-border-radius);
+
+      &:focus {
+        border-color: $select2-bootstrap5-focus-border-color;
+        outline: 0;
+
+        @if $select2-bootstrap5-enable-shadows {
+          @include box-shadow($select2-bootstrap5-box-shadow, $select2-bootstrap5-focus-box-shadow);
+        } @else {
+          // Avoid using mixin so we can pass custom focus shadow properly
+          box-shadow: $select2-bootstrap5-focus-box-shadow;
+        }
+      }
     }
   }
 }

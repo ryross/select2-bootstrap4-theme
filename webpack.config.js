@@ -24,8 +24,8 @@ module.exports = (env, argv) => {
 
   return {
     entry: {
-      'select2-bootstrap4': [
-        './src/select2-bootstrap4.scss',
+      'select2-bootstrap5': [
+        './src/select2-bootstrap5.scss',
       ],
     },
     output: {
